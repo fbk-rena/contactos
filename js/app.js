@@ -7,6 +7,9 @@ $(document).ready(function () {
     $("#cancelar").click(function(){
         $('#modal1').modal('close');
     });
+    var $contador = 0;
+    
+    $("#numContactos").text($contador);
 
     $("#addContacto").click(function () {
         //se obtienen los Datos
@@ -44,6 +47,8 @@ $(document).ready(function () {
         var $showName = $infoContacto.text($nombre);
         var $showNum = $infoContacto.text($telefono);
         var $iconBorrar = $icon.text("delete")
+        
+        $iconContacto.addClass("prefix large col s3");
 
         //Armar tarjeta de contacto
         $contDatos.append($showName, $showNum);
@@ -57,6 +62,7 @@ $(document).ready(function () {
         $btnBorrar.click(function () {
             $(this).parent().remove();
         });
+        contador++
         $('#modal1').modal('close');
 
     });
